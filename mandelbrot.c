@@ -51,7 +51,7 @@ float x0, y0, x, y, xtemp;
 int iteration, max_iteration, loc=0;
 printf("\nstart");
 for(y0 = -1; y0 < 1.1; y0 = y0 + 0.0025)
-   for(x0 = -2.5; x0 < 1.1; x0 = x0 + 0.0025){
+   for(x0 = -2.5; x0 < 1.1; x0 = x0 + 0.0025) {
      x = 0;
      y = 0;
      iteration = 0;
@@ -60,13 +60,13 @@ for(y0 = -1; y0 < 1.1; y0 = y0 + 0.0025)
     * (x*x) + (y*y) < (2*2) is the 2nd bailout condition ie
     * the mandelbrot set is always within a radius of 2.
     */
-    while(((x*x) + (y*y) < (2*2)) && iteration < max_iteration){
+    while(((x*x) + (y*y) < (2*2)) && iteration < max_iteration) {
        xtemp = (x*x) - (y*y) + x0;
        y = (2*x*y) + y0;
 
        x = xtemp;
        iteration = iteration + 1;
-       }
+    }
     if(iteration >= 999) {
     /*
     * setting color pixel to Mandelbrot set coordinate
@@ -75,7 +75,7 @@ for(y0 = -1; y0 < 1.1; y0 = y0 + 0.0025)
          pixels[loc].r = 0;
          pixels[loc].g = 0;
          pixels[loc].b = 0;
-    } else{
+    } else {
     /*
     * setting color pixel to the reset of the coordinate by the
     * pattern of no of iteration before bailout.

@@ -7,7 +7,7 @@
 
 #define MIN(a,b) (a < b ? a : b)
 
-int calculateMag (double z1, double z2, double complex c, int numColours);
+int calculateMag (double, double, double complex, int);
 
 int main (int argc, char** argv) {
   //SET THIS TO 1 IF YOU WANT TO SEE DEBUGGING INFO
