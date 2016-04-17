@@ -38,10 +38,6 @@ int main(int argc, char ** argv) {
   return 0;
 }
 
-// void defineColourArray(Colour **array, int mag) {
-//   *array = malloc((mag - 1) * sizeof(*array));
-// }
-
 // Sets up some OpenGL nonsense
 void initialize(void) {
   glClearColor(1.0, 1.0, 1.0, 1.0);
@@ -71,7 +67,7 @@ void display(void) {
     }
     j = 0;
 
-    p[0] = atof(array[1]);
+    p[0] = atof(array[1]);        // Our two points
     p[1] = atof(array[0]);
     current = colours[atoi(array[2])];
 
