@@ -15,8 +15,8 @@ int main (int argc, char** argv) {
 
   //fractal specific variables
   double x1 = -1.5, y1 = -1.5, x2 = 1.5, y2 = 1.5; //area of the fractal visible
-  int width = 1000;   //x-resolution
-  int height = 1000;  //y-resolution
+  int width;   //x-resolution
+  int height;  //y-resolution
 	double c1, c2;  //2 components of the complex number C
   int numColours;
 
@@ -24,6 +24,8 @@ int main (int argc, char** argv) {
   sscanf(argv[1],"%lf",&c1);
   sscanf(argv[2],"%lf",&c2);
   sscanf(argv[3],"%i",&numColours);
+  sscanf(argv[4], "%d", &width);
+  sscanf(argv[5], "%d", &height);
 
   //create complex C
   double complex c = c1 + c2 * I;
@@ -67,7 +69,8 @@ int main (int argc, char** argv) {
   if (debug && rank > 0) {
     for (j = starty; j < endy; j++) {
       for (i = 0; i < width; i++) {
-        printf("RANK: %d - (%d,%d,%d)\n", rank, j, i, magnitudes[j - starty][i]);
+        // printf("RANK: %d - (%d,%d,%d)\n", rank, j, i, magnitudes[j - starty][i]);
+        printf("%d %d %d\n", j, i, magnitudes[j - starty][i]);
       }
     }
     printf("\n\n");

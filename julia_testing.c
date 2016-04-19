@@ -13,7 +13,7 @@ typedef struct {
   int g;
   int b;
 } Colour;
-Colour *colours = NULL;     // Globally initialize colour array
+Colour *colours = NULL;     // Globally initialize colour array - this is just general colours, not pixels
 
 int main(int argc, char ** argv) {
   colours = malloc((atoi(argv[1]) - 1) * sizeof(*colours));      // Allocate array of random colours
@@ -27,7 +27,7 @@ int main(int argc, char ** argv) {
 
   glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-  glutInitWindowSize(1000, 1000);
+  glutInitWindowSize(4000, 4000);
   glutInitWindowPosition(0, 0);
   glutCreateWindow("High Definition Julia Set");
   glutDisplayFunc(display);
@@ -44,7 +44,7 @@ void initialize(void) {
   glColor3f(1.0, 0.0, 0.0);
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
-  gluOrtho2D(0.0, 1000.0, 0.0, 1000.0);
+  gluOrtho2D(0.0, 4000.0, 0.0, 4000.0);
   glMatrixMode(GL_MODELVIEW);
 }
 
@@ -56,7 +56,7 @@ void display(void) {
   point2 p = {0.0, 0.0};
 
   char *piece; char line[20]; char *array[3];
-  FILE *file = fopen("nope.txt", "r");
+  FILE *file = fopen("julia10ko.txt", "r");
 
   // Loops for the length of the file, plotting the points with the respective colours
   while (fgets(line, sizeof(line), file)) {
