@@ -70,7 +70,7 @@ int main (int argc, char** argv) {
     for (j = starty; j < endy; j++) {
       for (i = 0; i < width; i++) {
         // printf("RANK: %d - (%d,%d,%d)\n", rank, j, i, magnitudes[j - starty][i]);
-        printf("%d %d %d\n", j, i, magnitudes[j - starty][i]);
+        // printf("%d %d %d\n", j, i, magnitudes[j - starty][i]);
       }
     }
     printf("\n\n");
