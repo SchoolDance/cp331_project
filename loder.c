@@ -91,16 +91,16 @@ int main(int argc, char *argv[])
   const char* filename = argc > 1 ? argv[1] : "test.png";
 
   /*generate some image*/
-  unsigned width = 1000, height = 1000;
+  int width = 1000, height = 1000;
   unsigned char* image = malloc(width * height * 4);
-  unsigned x, y;
+  int x, y;
   for(y = 0; y < height; y++)
   for(x = 0; x < width; x++)
   {
-    image[4 * width * y + 4 * x + 0] = 255 * !(x & y);
-    image[4 * width * y + 4 * x + 1] = x ^ y;
-    image[4 * width * y + 4 * x + 2] = x | y;
-    image[4 * width * y + 4 * x + 3] = 50;
+    image[4 * width * y + 4 * x + 0] = 255;
+    image[4 * width * y + 4 * x + 1] = 0;
+    image[4 * width * y + 4 * x + 2] = 0;
+    image[4 * width * y + 4 * x + 3] = 255;
   }
 
   /*run an example*/
