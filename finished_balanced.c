@@ -10,8 +10,8 @@
 #define DEADTAG     2
 
 /* Image resolution */
-#define HEIGHT      15000      //x-resolution
-#define WIDTH       15000      //y-resolution       
+#define HEIGHT      15000      // x-resolution
+#define WIDTH       15000      // y-resolution       
 #define NUMCOLORS   50;        // number of colors
 
 /* Areas of fractal visible */
@@ -121,8 +121,8 @@ master(complex c)
         idx_work++;             // point to next
 
         /* send workload */        
-        MPI_Send(&sender,       // pixel index 
-        1,                      // 4 data item 
+        MPI_Send(&sender,       // sender package
+        1,                      // 1 item sent
         mpi_worknode_type,      // struct
         rank,                   // destination in index rank of n_cpu 
         WORKTAG,                // worktag 
@@ -135,12 +135,12 @@ master(complex c)
         
         //printf("%d pixels left to compute\n", (num_total - idx_work));
 
-        int buffer[2];              // reciever
-        int pixel_idx, pixel_mag;   // reciever
+        int buffer[2];              // reciever buffer
+        int pixel_idx, pixel_mag;   // reciever values
         
         MPI_Recv(buffer,            // result buffer 
         2,                          // 2 items 
-        MPI_INT,                    //data item is int 
+        MPI_INT,                    // data item is int 
         MPI_ANY_SOURCE,             // receive from any sender 
         MPI_ANY_TAG,                // receive any type of message 
         MPI_COMM_WORLD,             // always use this 
