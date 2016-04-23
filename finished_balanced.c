@@ -153,7 +153,6 @@ master(complex c)
         
         /* merge array */
         finalMags[pixel_idx] = pixel_mag;
-        int work[4];
 
         worknode sender;                // assign more work
         sender = workload[idx_work];    // locate
