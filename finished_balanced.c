@@ -238,7 +238,7 @@ slave(complex c)
         MPI_Recv(
             &inbox,             // buffer
             1,                  // number of itmes
-            mpi_worknode_type,  // integer datatype 
+            mpi_worknode_type,  // custom struct 
             0,                  // from node 0
             MPI_ANY_TAG,        // with any tag
             MPI_COMM_WORLD,     // from around the world
