@@ -3,8 +3,8 @@
 To compile:
 
 ```bash
-➜  gcc julia_testing.c -o julia_testing -lglut -lGL -lGLU
-➜  ./julia_testing 50
+➜  gcc julia_draw.c -o julia_draw -lglut -lGL -lGLU
+➜  ./julia_draw 50
 ```
 
-Right I am just using `julia_testing.c` as a benchmark for the production code. Just want to make sure everything is ironed out before we merge.
+Right now I am just using `julia_draw.c` as a benchmark for the production code. Just want to make sure everything is ironed out before we merge.
